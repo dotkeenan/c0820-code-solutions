@@ -12,6 +12,7 @@ const create = () => {
   const nextId = dataJSON.nextId;
   dataJSON.notes[nextId] = userInput;
   dataJSON.nextId++;
+
   const readString = JSON.stringify(dataJSON, null, 2);
 
   fs.writeFile('./data.json', readString, 'utf8', (err, data) => {
