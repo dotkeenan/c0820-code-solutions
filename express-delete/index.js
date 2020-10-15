@@ -15,3 +15,7 @@ const myArr = [
     grade: 99
   }
 ];
+
+app.get('/api/grades', res => {
+  res.json(myArr);
+});
