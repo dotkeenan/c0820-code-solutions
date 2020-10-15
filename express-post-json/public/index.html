@@ -6,13 +6,13 @@
   <title>Express Post JSON Bonus</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <h1 class="text-center">Add a Grade</h1>
   <main class="container">
     <div class="row justify-content-center">
-      <form action="" method="POST" class="col-6">
+      <form id="form" action="/api/grades" method="POST" class="col-6">
 
         <div class="form-group">
           <label for="name">Name</label>
@@ -29,19 +29,16 @@
           <input type="number" class="form-control" id="gradeInput" placeholder="0" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
 
       </form>
     </div>
   </main>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"
-    integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw=="
-    crossorigin="anonymous"></script>
-  <script src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+    integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+    crossorigin="anonymous">
+    </script>
+  <script src="/main.js"></script>
 </body>
 </html>
