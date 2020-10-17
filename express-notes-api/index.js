@@ -129,7 +129,7 @@ app.put('/api/notes/:id', (req, res, next) => {
     if (err) {
       console.error(err);
       res.status(500).json({
-        error: 'An unexpected error occured'
+        error: 'An unexpected error occurred'
       });
     }
     res.status(200).json(req.body);
