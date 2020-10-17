@@ -9,7 +9,7 @@ app.use(jsonMiddleware);
 
 // user can get all notes
 app.get('/api/notes', (req, res, next) => {
-  res.json(Object.values(dataJson.notes));
+  res.status(200).json(Object.values(dataJson.notes));
 });
 
 // user can get all notes alternative code
