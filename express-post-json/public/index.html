@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Express Post JSON Bonus</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- <div class="container"></div> -->
+  <h1 class="text-center">Add a Grade</h1>
+  <main class="container">
+    <div class="row justify-content-center form">
+      <form id="form" action="/api/grades" method="POST" class="col-6">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="name" id="nameInput" placeholder="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="course">Course</label>
+          <input type="text" class="form-control" name="course" id="courseInput" placeholder="course" required>
+        </div>
+
+        <div class="form-group">
+          <label for="grade">Grade</label>
+          <input type="number" class="form-control" name="grade" id="gradeInput" placeholder="0" required>
+        </div>
+
+        <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+
+      </form>
+    </div>
+
+    <div class="row justify-content-center">
+      <table id="table" class="text-center col-6">
+        <thead>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Grade</th>
+        </thead>
+        <tbody>
+          <!-- rendered dom data goes here -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+    integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+    crossorigin="anonymous">
+    </script>
+  <script src="/main.js"></script>
+</body>
+</html>
