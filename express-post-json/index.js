@@ -2,8 +2,21 @@
 
 // revised to reflect solution for future studying
 const express = require('express');
-const grades = [];
-let nextId = 1;
+const grades = [
+  {
+    id: 1,
+    name: 'john wick',
+    course: 'React',
+    grade: 100
+  },
+  {
+    id: 2,
+    name: 'phil collins',
+    course: 'Javascript',
+    grade: 55
+  }
+];
+let nextId = 3;
 
 const app = express();
 

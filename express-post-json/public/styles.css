@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: #d2e7ff;
+}
+
+table {
+  width: 100%;
+  background-color: #fff;
+}
+
+.form {
+  margin-bottom: 20px;
+}

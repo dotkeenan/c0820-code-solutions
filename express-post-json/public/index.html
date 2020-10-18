@@ -9,29 +9,44 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+  <!-- <div class="container"></div> -->
   <h1 class="text-center">Add a Grade</h1>
   <main class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center form">
       <form id="form" action="/api/grades" method="POST" class="col-6">
 
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" id="nameInput" placeholder="name" required>
+          <input type="text" class="form-control" name="name" id="nameInput" placeholder="name" required>
         </div>
 
         <div class="form-group">
           <label for="course">Course</label>
-          <input type="text" class="form-control" id="courseInput" placeholder="course" required>
+          <input type="text" class="form-control" name="course" id="courseInput" placeholder="course" required>
         </div>
 
         <div class="form-group">
           <label for="grade">Grade</label>
-          <input type="number" class="form-control" id="gradeInput" placeholder="0" required>
+          <input type="number" class="form-control" name="grade" id="gradeInput" placeholder="0" required>
         </div>
 
         <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
 
       </form>
+    </div>
+
+    <div class="row justify-content-center">
+      <table id="table" class="text-center col-6">
+        <thead>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Grade</th>
+        </thead>
+        <tbody>
+          <!-- rendered dom data goes here -->
+        </tbody>
+      </table>
     </div>
   </main>
 
