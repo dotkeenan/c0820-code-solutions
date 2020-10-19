@@ -1,4 +1,3 @@
-// const TodoApp = require('./components/todo-app');
 import TodoApp from './components/todo-app';
 
 const container = document.querySelector('#app');

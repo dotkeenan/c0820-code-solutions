@@ -1,4 +1,3 @@
-// const { createElement } = require('../lib');
 import createElement from '../lib/create-element';
 
 class TodoForm {
@@ -45,5 +44,4 @@ class TodoForm {
   }
 }
 
-// module.exports = TodoForm;
 export default TodoForm;
