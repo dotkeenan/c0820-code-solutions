@@ -1,0 +1,32 @@
+.button-style {
+  width: 75px;
+  height: 25px;
+}
+
+.cody {
+  background-color: chartreuse;
+}
+
+.dark-purple {
+  background-color: #351c75;
+}
+
+.light-purple {
+  background-color: #674ea7;
+}
+
+.red {
+  background-color: #e06666;
+}
+
+.orange {
+  background-color: #f6b26b;
+}
+
+.yellow {
+  background-color: #ff0;
+}
+
+.white {
+  background-color: #fff;
+}
