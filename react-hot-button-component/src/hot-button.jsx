@@ -11,7 +11,7 @@ class HotButton extends React.Component {
 
   handleClick() {
     this.setState(state => ({
-      counter: ++state.counter
+      counter: state.counter + 1
     }));
   }
 
