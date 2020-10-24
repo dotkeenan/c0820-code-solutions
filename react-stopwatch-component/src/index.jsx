@@ -11,6 +11,7 @@ class Stopwatch extends React.Component {
     this.tick = this.tick.bind(this);
     this.toggleStart = this.toggleStart.bind(this);
     this.togglePause = this.togglePause.bind(this);
+    this.resetTimer = this.resetTimer.bind(this);
   }
 
   tick() {
@@ -36,6 +37,14 @@ class Stopwatch extends React.Component {
     clearInterval(this.timerID);
   }
 
+  resetTimer() {
+    if (!this.state.isRunning) {
+      this.setState(state => ({
+        time: 0
+      }));
+    }
+  }
+
   render() {
     const playStatusIcon = this.state.isRunning ? 'fas fa-pause' : 'fas fa-play';
     const playStatus = this.state.isRunning ? this.togglePause : this.toggleStart;
@@ -43,7 +52,7 @@ class Stopwatch extends React.Component {
     return (
       <div className={'stopwatch'}>
         <div className={'clockface'}>
-          <span className={'time'}>{this.state.time}</span>
+          <span onClick={this.resetTimer} className={'time'}>{this.state.time}</span>
         </div>
         <div className={'controls'}>
           <i className={playStatusIcon} onClick={playStatus}></i>
