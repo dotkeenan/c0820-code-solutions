@@ -41,6 +41,7 @@ body {
 
 .time {
   font-size: 3rem;
+  cursor: pointer;
 }
 
 .controls {
