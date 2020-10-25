@@ -1,67 +1,4 @@
-import React from 'react';
 
-class ValidatedInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      password: ''
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(e) {
-    this.setState(state => ({
-      password: e.target.value
-    }));
-  }
-
-  render() {
-    const password = this.state.password;
-
-    function chooseMsg() {
-      if (password.length === 0) {
-        return 'A password is required';
-      } else if (password.length < 8) {
-        return 'Your password is too short.';
-      }
-    }
-
-    function chooseIcon() {
-      if (password.length < 8) {
-        return 'fas fa-times';
-      }
-      return 'fas fa-check';
-    }
-
-    return (
-      <form>
-        <div>
-          <label htmlFor="password">Password</label>
-        </div>
-        <input
-          type="password"
-          name="password-value"
-          id="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-          placeholder="********" />
-        <i className={chooseIcon()}></i>
-        {/* <button>Login</button> */}
-        <div>
-          <p>{chooseMsg()}</p>
-        </div>
-      </form>
-    );
-  }
-}
-
-export default ValidatedInput;
-
-// Alternate ways that I need to ask which is better to do.
-// Alternate way 1 that has conditionals in the render() and sets appropriate
-// react elements to variables, and then returns those variables in the react element
-// only uses 1 state.
-/*
 import React from 'react';
 
 class ValidatedInput extends React.Component {
@@ -118,7 +55,12 @@ class ValidatedInput extends React.Component {
   }
 }
 
-export default ValidatedInput; */
+export default ValidatedInput;
+
+// Alternate ways that I need to ask which is better to do.
+// Alternate way 1 that has conditionals in the render() and sets appropriate
+// react elements to variables, and then returns those variables in the react element
+// only uses 1 state.
 
 /* Alternate way 2 which has the the conditionals in the handleChange()
 and also has more states that get changed.  Might be worse.
@@ -186,3 +128,65 @@ class ValidatedInput extends React.Component {
 }
 
 export default ValidatedInput; */
+
+// ---------------------------------------------------------------------
+// Alternate way that runs functions within render() in order to decide
+// which icon and which status message is shown.
+// import React from 'react';
+
+// class ValidatedInput extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       password: ''
+//     };
+//     this.handleChange = this.handleChange.bind(this);
+//   }
+
+//   handleChange(e) {
+//     this.setState(state => ({
+//       password: e.target.value
+//     }));
+//   }
+
+//   render() {
+//     const password = this.state.password;
+
+//     function chooseMsg() {
+//       if (password.length === 0) {
+//         return 'A password is required';
+//       } else if (password.length < 8) {
+//         return 'Your password is too short.';
+//       }
+//     }
+
+//     function chooseIcon() {
+//       if (password.length < 8) {
+//         return 'fas fa-times';
+//       }
+//       return 'fas fa-check';
+//     }
+
+//     return (
+//       <form>
+//         <div>
+//           <label htmlFor="password">Password</label>
+//         </div>
+//         <input
+//           type="password"
+//           name="password-value"
+//           id="password"
+//           value={this.state.password}
+//           onChange={this.handleChange}
+//           placeholder="********" />
+//         <i className={chooseIcon()}></i>
+//         {/* <button>Login</button> */}
+//         <div>
+//           <p>{chooseMsg()}</p>
+//         </div>
+//       </form>
+//     );
+//   }
+// }
+
+// export default ValidatedInput;
