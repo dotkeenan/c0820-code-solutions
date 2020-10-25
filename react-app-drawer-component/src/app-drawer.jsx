@@ -5,53 +5,77 @@ class AppDrawer extends React.Component {
     super(props);
     this.state = {
       nav: 'nav',
-      main: ''
+      main: 'main',
+      navIsOpen: false
     };
     this.showMenu = this.showMenu.bind(this);
     this.hideMenu = this.hideMenu.bind(this);
   }
 
   showMenu(e) {
-    this.setState({
-      nav: 'nav-visible',
-      main: 'main-dark'
-    }, e.stopPropagation());
+    if (!this.state.navIsOpen) {
+      this.setState({
+        nav: 'nav-visible',
+        main: 'main-dark',
+        navIsOpen: true
+      });
+    }
   }
 
   hideMenu(e) {
-    if (e.target === document.querySelector('.main') ||
-    e.target.nodeName === 'A') {
+    if (this.state.navIsOpen) {
       this.setState({
         nav: 'nav',
-        main: ''
+        main: 'main',
+        navIsOpen: false
       });
     }
   }
 
   render() {
     return (
-      <div onClick={this.hideMenu} className={`main ${this.state.main}`}>
+      <div>
         <i onClick={this.showMenu} className={'fas fa-hamburger'}></i>
         <div className={this.state.nav}>
           <nav>
             <h1>Menu</h1>
             <ul>
-              <li onClick={this.hideMenu} className={'menu-item'}>
-                <a href="#">About</a>
+              <li className={'menu-item'}>
+                <a onClick={this.hideMenu} href="#">About</a>
               </li>
-              <li onClick={this.hideMenu} className={'menu-item'}>
-                <a href="#">Getting Started</a>
+              <li className={'menu-item'}>
+                <a onClick={this.hideMenu} href="#">Getting Started</a>
               </li>
-              <li onClick={this.hideMenu} className={'menu-item'}>
-                <a href="#">Sign In</a>
+              <li className={'menu-item'}>
+                <a onClick={this.hideMenu} href="#">Sign In</a>
               </li>
             </ul>
           </nav>
         </div>
+        <div onClick={this.hideMenu} className={this.state.main}></div>
       </div>
     );
   }
-
 }
 
 export default AppDrawer;
+
+// Old code that combines the two methods, but I don't think it can work as it is
+
+// this.toggleMenu = this.toggleMenu.bind(this);
+
+// toggleMenu() {
+//   if (!this.state.navIsOpen) {
+//     this.setState({
+//       nav: 'nav-visible',
+//       main: 'main-dark',
+//       navIsOpen: true
+//     });
+//   } else {
+//     this.setState({
+//       nav: 'nav',
+//       main: 'main',
+//       navIsOpen: false
+//     });
+//   }
+// }
