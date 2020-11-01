@@ -24,7 +24,7 @@ app.post('/api/grades', (req, res, next) => {
   const { name, course, grade } = req.body;
 
   if (!name || !course | !Number.isInteger(grade)) {
-    res.status(400).json({
+    return res.status(400).json({
       error: 'Name, Course and Grade field are required and Grade must be an integer'
     });
   }
@@ -37,7 +37,7 @@ app.post('/api/grades', (req, res, next) => {
   const params = [name, course, grade];
 
   db.query(sql, params)
-    .then(result => res.status(201).json(result.rows))
+    .then(result => res.status(201).json(result.rows[0]))
     .catch(err => {
       console.error(err);
       res.status(500).json({
@@ -71,7 +71,7 @@ app.put('/api/grades/:gradeId', (req, res, err) => {
           error: 'That "gradeId" does not exist'
         });
       }
-      res.status(200).json(result.rows);
+      res.status(200).json(gradeIdParam);
     })
     .catch(err => {
       console.error(err);
@@ -106,7 +106,7 @@ app.delete('/api/grades/:gradeId', (req, res, next) => {
           error: 'That "gradeId" does not exist'
         });
       }
-      res.status(204).json(result.rows);
+      res.status(204).json(result.rows[0]);
     })
     .catch(err => {
       console.error(err);
